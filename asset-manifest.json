@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/anek-resume/static/css/main.7e68d5cc.css",
+    "main.js": "/anek-resume/static/js/main.03638051.js",
+    "static/js/453.516e639c.chunk.js": "/anek-resume/static/js/453.516e639c.chunk.js",
+    "index.html": "/anek-resume/index.html",
+    "main.7e68d5cc.css.map": "/anek-resume/static/css/main.7e68d5cc.css.map",
+    "main.03638051.js.map": "/anek-resume/static/js/main.03638051.js.map",
+    "453.516e639c.chunk.js.map": "/anek-resume/static/js/453.516e639c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e68d5cc.css",
+    "static/js/main.03638051.js"
+  ]
+}
