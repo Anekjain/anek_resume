@@ -1,70 +1,238 @@
-# Getting Started with Create React App
+# Digital Resume - React Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive digital resume built with React, Tailwind CSS, and Framer Motion. Features smooth animations, clean design, and mobile-first responsive layout.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Modern Design**: Clean, professional layout with gradient backgrounds and smooth animations
+- **Responsive**: Fully responsive across mobile, tablet, and desktop devices
+- **Animations**: Smooth scroll-triggered animations using Framer Motion
+- **Component-Based**: Modular, reusable components for easy customization
+- **Performance**: Optimized for fast loading and smooth interactions
+- **Accessibility**: Built with accessibility best practices
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React 18** - Frontend framework
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Lucide React** - Icon library
+- **Vite** - Build tool (recommended for new projects)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Installation
 
-### `npm test`
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd digital-resume
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Open your browser**
+   Navigate to `http://localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎨 Customization
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Personal Information
+Edit `src/data/resumeData.js` to update your personal information:
 
-### `npm run eject`
+```javascript
+export const resumeData = {
+  personalInfo: {
+    name: "Your Name",
+    title: "Your Title",
+    email: "your.email@example.com",
+    phone: "+1 (555) 123-4567",
+    location: "Your City, State",
+    linkedin: "https://linkedin.com/in/yourprofile",
+    github: "https://github.com/yourusername",
+    profilePicture: "/your-photo.jpg" // Optional: add your photo
+  },
+  // ... other sections
+};
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Profile Picture
+To add your profile picture:
+1. Place your image in the `public` folder
+2. Update the `profilePicture` path in `resumeData.js`
+3. The component will automatically use your image instead of initials
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Company Logos
+To add company logos:
+1. Create a `company-logos` folder in `public`
+2. Add your company logo images
+3. Update the `logo` paths in the experience section
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4. Styling
+Customize colors and styling in `tailwind.config.js`:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```javascript
+theme: {
+  extend: {
+    colors: {
+      primary: {
+        // Your custom primary colors
+      },
+      secondary: {
+        // Your custom secondary colors
+      }
+    }
+  }
+}
+```
 
-## Learn More
+### 5. Animations
+Modify animations in individual components or create custom animations in `tailwind.config.js`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📱 Responsive Design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The resume is fully responsive with breakpoints:
+- **Mobile**: < 640px
+- **Tablet**: 640px - 1024px
+- **Desktop**: > 1024px
 
-### Code Splitting
+## 🚀 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Option 1: GitHub Pages
+1. **Build the project**
+   ```bash
+   npm run build
+   ```
 
-### Analyzing the Bundle Size
+2. **Add GitHub Pages dependency**
+   ```bash
+   npm install --save-dev gh-pages
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. **Add scripts to package.json**
+   ```json
+   {
+     "scripts": {
+       "predeploy": "npm run build",
+       "deploy": "gh-pages -d build"
+     }
+   }
+   ```
 
-### Making a Progressive Web App
+4. **Deploy**
+   ```bash
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Option 2: Vercel (Recommended)
+1. **Install Vercel CLI**
+   ```bash
+   npm install -g vercel
+   ```
 
-### Advanced Configuration
+2. **Deploy**
+   ```bash
+   vercel
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Option 3: Netlify
+1. **Build the project**
+   ```bash
+   npm run build
+   ```
 
-### Deployment
+2. **Drag and drop** the `build` folder to Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Option 4: Firebase Hosting
+1. **Install Firebase CLI**
+   ```bash
+   npm install -g firebase-tools
+   ```
 
-### `npm run build` fails to minify
+2. **Initialize Firebase**
+   ```bash
+   firebase init hosting
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. **Build and deploy**
+   ```bash
+   npm run build
+   firebase deploy
+   ```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Header.js       # Header with contact info
+│   ├── Summary.js      # Professional summary
+│   ├── Experience.js   # Work experience
+│   ├── Skills.js       # Technical & soft skills
+│   ├── Certifications.js # Certifications
+│   ├── Education.js    # Education history
+│   ├── Hobbies.js      # Personal interests
+│   └── Footer.js       # Footer with social links
+├── data/
+│   └── resumeData.js   # Resume content data
+├── App.js              # Main app component
+├── index.js            # App entry point
+└── index.css           # Global styles & Tailwind
+```
+
+## 🎯 Performance Tips
+
+1. **Optimize Images**: Use WebP format and compress images
+2. **Lazy Loading**: Images are automatically lazy-loaded
+3. **Code Splitting**: Consider implementing React.lazy() for larger components
+4. **Bundle Analysis**: Use `npm run build --analyze` to analyze bundle size
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm start` - Start development server
+- `npm run build` - Build for production
+- `npm test` - Run tests
+- `npm run eject` - Eject from Create React App
+
+### Code Style
+
+- Use functional components with hooks
+- Follow React best practices
+- Use meaningful component and variable names
+- Add comments for complex logic
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is open source.
+
+## 🙏 Acknowledgments
+
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) for smooth animations
+- [Lucide React](https://lucide.dev/) for beautiful icons
+- [Inter Font](https://rsms.me/inter/) for typography
+
+## 📞 Support
+
+If you have any questions or need help customizing your resume, feel free to:
+- Open an issue on GitHub
+- Contact me at anekporwal1996@gmail.com
+
+---
+
+**Happy coding! 🎉**
